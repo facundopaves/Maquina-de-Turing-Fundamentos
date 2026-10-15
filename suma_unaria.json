@@ -1,0 +1,20 @@
+
+{
+    "description": "Máquina de Turing para suma unaria (ej. 11#111 -> 11111)",
+    "states": ["q0", "q1", "q2", "q_accept"],
+    "input_alphabet": ["1", "#"],
+    "tape_alphabet": ["1", "#", "B"],
+    "blank_symbol": "B",
+    "start_state": "q0",
+    "accept_states": ["q_accept"],
+    "reject_states": ["q_reject"],
+    "transitions": [
+        {"from_state": "q0", "read": "1", "to_state": "q0", "write": "1", "dir": "D"},
+        {"from_state": "q0", "read": "#", "to_state": "q1", "write": "1", "dir": "D"},
+        
+        {"from_state": "q1", "read": "1", "to_state": "q1", "write": "1", "dir": "D"},
+        {"from_state": "q1", "read": "B", "to_state": "q2", "write": "B", "dir": "I"},
+        
+        {"from_state": "q2", "read": "1", "to_state": "q_accept", "write": "B", "dir": "S"}
+    ]
+}

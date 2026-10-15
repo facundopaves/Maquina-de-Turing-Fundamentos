@@ -1,0 +1,26 @@
+{
+    "description": "Máquina de Turing para el lenguaje 0^n1^n",
+    "states": ["q0", "q1", "q2", "q3", "q_accept"],
+    "input_alphabet": ["0", "1"],
+    "tape_alphabet": ["0", "1", "X", "Y", "B"],
+    "blank_symbol": "B",
+    "start_state": "q0",
+    "accept_states": ["q_accept"],
+    "reject_states": ["q_reject"],
+    "transitions": [
+        {"from_state": "q0", "read": "0", "to_state": "q1", "write": "X", "dir": "D"},
+        {"from_state": "q0", "read": "Y", "to_state": "q3", "write": "Y", "dir": "D"},
+        {"from_state": "q0", "read": "B", "to_state": "q_accept", "write": "B", "dir": "S"},
+
+        {"from_state": "q1", "read": "0", "to_state": "q1", "write": "0", "dir": "D"},
+        {"from_state": "q1", "read": "Y", "to_state": "q1", "write": "Y", "dir": "D"},
+        {"from_state": "q1", "read": "1", "to_state": "q2", "write": "Y", "dir": "I"},
+
+        {"from_state": "q2", "read": "0", "to_state": "q2", "write": "0", "dir": "I"},
+        {"from_state": "q2", "read": "Y", "to_state": "q2", "write": "Y", "dir": "I"},
+        {"from_state": "q2", "read": "X", "to_state": "q0", "write": "X", "dir": "D"},
+
+        {"from_state": "q3", "read": "Y", "to_state": "q3", "write": "Y", "dir": "D"},
+        {"from_state": "q3", "read": "B", "to_state": "q_accept", "write": "B", "dir": "S"}
+    ]
+}

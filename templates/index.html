@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Máquina de Turing</title>
+    <!-- Conectamos el archivo CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulador de Máquina de Turing</h1>
+    
+    <div class="controls">
+        <select id="tipo-maquina">
+            <option value="suma">Suma Unaria</option>
+            <option value="0n1n">Lenguaje 0^n1^n</option>
+        </select>
+        <input type="text" id="input-palabra" placeholder="Ej: 11#111 o 0011">
+        <button id="btn-cargar" type="button" onclick="cargarMaquina()">Cargar / Reiniciar</button>
+    </div>
+
+    <div class="controls">
+        <button id="btn-step" onclick="ejecutarPaso()" disabled>Paso a Paso</button>
+        <button id="btn-play" onclick="reproducir()" disabled>Play (Automático)</button>
+        <button id="btn-pause" onclick="pausar()" disabled>Pausa</button>
+    </div>
+
+    <div class="status-panel">
+        <div>Estado actual: <span id="estado-actual" class="estado-texto">-</span></div>
+        <div id="resultado" class="resultado" role="status" aria-live="polite"></div>
+        <div id="salida-maquina" class="resultado-cinta" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="cinta-container" id="cinta">
+        <!-- Las celdas se dibujarán aquí con JavaScript -->
+    </div>
+</div>
+
+<!-- Conectamos el archivo JavaScript -->
+<script src="/static/script.js"></script>
+
+</body>
+</html>

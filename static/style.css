@@ -1,0 +1,46 @@
+body { font-family: 'Segoe UI',
+    Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f4f9; 
+    padding: 20px; }
+
+
+
+.container { max-width: 800px;
+    margin: auto; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+
+h1 
+{ 
+    text-align: center; 
+    color: #333; 
+}
+
+/* Controles */
+.controls { 
+    display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+input, select, button 
+{ padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; }
+button { 
+    background-color: #ff00bf; color: white; border: none; cursor: pointer; transition: 0.3s; }
+button:hover { 
+    background-color: #0056b3; }
+button:disabled { 
+    background-color: #aaa; cursor: not-allowed; }
+
+/* Cinta */
+.cinta-container { display: flex; justify-content: center; overflow-x: auto; padding: 20px 0; margin-top: 20px; }
+.celda { width: 40px; height: 50px; border: 2px solid #555; margin: 0 2px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; background: #fff; position: relative; }
+.celda.activa { background-color: #ffeaa7; border-color: #fdcb6e; box-shadow: 0 0 10px #fdcb6e; }
+.celda.activa::after { content: '▲'; position: absolute; bottom: -20px; color: #d63031; font-size: 16px; }
+
+/* Panel de Información */
+.status-panel { background: #eef2f3; padding: 15px; border-radius: 5px; margin-top: 20px; text-align: center; font-size: 18px; }
+.estado-texto { font-weight: bold; color: #007bff; }
+.resultado { font-weight: bold; margin-top: 10px; font-size: 20px;}
+.resultado-cinta { font-family: Consolas, monospace; font-weight: bold; margin-top: 8px; font-size: 20px; }
+.resultado.aceptada { color: #27ae60; }
+.resultado.rechazada { color: #c0392b; }
